@@ -1,5 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 import { Sidebar } from "./-components/sidebar";
 import { Terminal } from "./-components/terminal";
 import { useGameState } from "./-hooks/use-game-state";
@@ -13,6 +15,7 @@ export const Route = createFileRoute("/game-1/")({
 });
 
 function RouteComponent() {
+	const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 	const {
 		currentLevel,
 		history,
@@ -34,15 +37,32 @@ function RouteComponent() {
 				<div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 			</div>
 
-			<Sidebar
-				visible={filesVisible}
-				activePhase={currentLevel.phase}
-				phaseColor={currentLevel.phaseColor}
-				progress={progress}
-				onReset={resetGame}
-			/>
+			<div className="hidden md:block">
+				<Sidebar
+					visible={filesVisible}
+					activePhase={currentLevel.phase}
+					phaseColor={currentLevel.phaseColor}
+					progress={progress}
+					onReset={resetGame}
+				/>
+			</div>
 
 			<main className="flex-1 flex flex-col p-6 min-h-0 relative">
+				<div className="flex items-center justify-between md:hidden mb-4">
+					<Link
+						to="/"
+						className="text-xs text-terminal-accent font-bold uppercase tracking-widest"
+					>
+						CLAUDE CODE
+					</Link>
+					<button
+						onClick={() => setIsMobileSidebarOpen(true)}
+						className="p-2 text-terminal-text hover:text-terminal-accent transition-colors"
+					>
+						<Menu size={20} />
+					</button>
+				</div>
+
 				<div className="flex-1 min-h-0 relative z-0">
 					<Terminal
 						history={history}
@@ -71,6 +91,41 @@ function RouteComponent() {
 					)}
 				</AnimatePresence>
 			</main>
+
+			{isMobileSidebarOpen && (
+				<div className="fixed inset-0 z-50 md:hidden">
+					<button
+						className="absolute inset-0 bg-black/80 cursor-default"
+						onClick={() => setIsMobileSidebarOpen(false)}
+						aria-label="Close menu"
+					/>
+					<div className="absolute right-0 top-0 bottom-0 w-80 bg-[#111] border-l border-terminal-border/10">
+						<div className="flex items-center justify-between p-4 border-b border-white/5">
+							<span className="text-xs text-terminal-dim font-semibold uppercase">
+								Menu
+							</span>
+							<button
+								onClick={() => setIsMobileSidebarOpen(false)}
+								className="p-1 text-terminal-text hover:text-terminal-accent transition-colors"
+							>
+								<X size={18} />
+							</button>
+						</div>
+						<div className="flex-1 overflow-y-auto">
+							<Sidebar
+								visible={filesVisible}
+								activePhase={currentLevel.phase}
+								phaseColor={currentLevel.phaseColor}
+								progress={progress}
+								onReset={() => {
+									resetGame();
+									setIsMobileSidebarOpen(false);
+								}}
+							/>
+						</div>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }

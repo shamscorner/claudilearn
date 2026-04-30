@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useGame } from "../-hooks/useGame";
 import { Dialogue } from "./Dialogue";
@@ -22,6 +23,7 @@ export function Terminal() {
 	} = useGame();
 
 	const [isTypingComplete, setIsTypingComplete] = useState(false);
+	const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 	const terminalContentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -76,12 +78,20 @@ export function Terminal() {
 		<div className="flex h-screen bg-[#0d0d0d] text-gray-300 font-mono overflow-hidden">
 			<div className="flex-1 flex flex-col">
 				<div className="h-10 bg-[#1a1a1a] border-b border-[#333] flex items-center justify-between px-4">
-					<Link
-						to="/"
-						className="text-xs text-gray-500 hover:text-[#DE7356] transition-colors"
-					>
-						Claude Code Terminal
-					</Link>
+					<div className="flex items-center gap-2">
+						<button
+							onClick={() => setIsMobileSidebarOpen(true)}
+							className="md:hidden p-1 text-gray-500 hover:text-[#DE7356] transition-colors"
+						>
+							<Menu size={18} />
+						</button>
+						<Link
+							to="/"
+							className="text-xs text-gray-500 hover:text-[#DE7356] transition-colors"
+						>
+							Claude Code Terminal
+						</Link>
+					</div>
 					<span className="text-xs text-[#DE7356] font-bold">
 						{currentLevel?.phase} - {state.currentLevel}/87
 					</span>
@@ -172,11 +182,46 @@ export function Terminal() {
 				</div>
 			</div>
 
-			<Sidebar
-				files={sidebarFiles}
-				currentLevel={state.currentLevel}
-				onReset={reset}
-			/>
+			<div className="hidden md:block w-64 h-full">
+				<Sidebar
+					files={sidebarFiles}
+					currentLevel={state.currentLevel}
+					onReset={reset}
+				/>
+			</div>
+
+			{isMobileSidebarOpen && (
+				<div className="fixed inset-0 z-50 md:hidden">
+					<button
+						className="absolute inset-0 bg-black/80 cursor-default"
+						onClick={() => setIsMobileSidebarOpen(false)}
+						aria-label="Close menu"
+					/>
+					<div className="absolute right-0 top-0 bottom-0 w-72 bg-[#0a0a0a] border-l border-[#222]">
+						<div className="flex items-center justify-between p-3 border-b border-[#222]">
+							<span className="text-xs text-gray-500 font-semibold uppercase">
+								Menu
+							</span>
+							<button
+								onClick={() => setIsMobileSidebarOpen(false)}
+								className="p-1 text-gray-500 hover:text-white transition-colors"
+							>
+								<X size={18} />
+							</button>
+						</div>
+						<div className="flex-1 overflow-y-auto">
+							<Sidebar
+								files={sidebarFiles}
+								currentLevel={state.currentLevel}
+								onReset={() => {
+									reset();
+									setIsMobileSidebarOpen(false);
+								}}
+							/>
+						</div>
+					</div>
+				</div>
+			)}
 
 			{state.isDialogueOpen && currentLevel?.dialogue && (
 				<Dialogue lines={currentLevel.dialogue} onClose={closeDialogue} />
