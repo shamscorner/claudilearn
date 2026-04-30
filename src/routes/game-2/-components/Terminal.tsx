@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useGame } from "../hooks/useGame";
+import { useGame } from "../-hooks/useGame";
 import { Dialogue } from "./Dialogue";
 import { Input } from "./Input";
 import { Sidebar } from "./Sidebar";

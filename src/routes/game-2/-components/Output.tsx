@@ -1,4 +1,4 @@
-import type { Level } from "../types/game";
+import type { Level } from "../../../types/game";
 
 interface OutputProps {
 	output: Level["output"];

@@ -1,4 +1,4 @@
-import { levels } from "../data/levels";
+import { levels } from "../-data/levels";
 
 interface SidebarProps {
 	files?: string[];

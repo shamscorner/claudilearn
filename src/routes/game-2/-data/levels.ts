@@ -1,4 +1,4 @@
-import type { Level } from "../types/game";
+import type { Level } from "../../../types/game";
 
 export const levels: Level[] = [
 	{
@@ -833,7 +833,6 @@ export const levels: Level[] = [
 				speaker: "System",
 				text: "Location compromised.",
 				type: "urgent",
-				visualEffect: "glitch",
 			},
 		],
 		output: "Exiting...",

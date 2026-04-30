@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
-import { levels } from "../data/levels";
-import type { GameAction, GameState, Level } from "../types/game";
-import { initialGameState } from "../types/game";
+import type { GameAction, GameState, Level } from "../../../types/game";
+import { initialGameState } from "../../../types/game";
+import { levels } from "../-data/levels";
 
 const STORAGE_KEY = "claudify-learn-game-state";
 

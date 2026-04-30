@@ -1,4 +1,4 @@
-import type { DialogueEntry, DialogueEntryType } from "../types/game";
+import type { DialogueEntry, DialogueEntryType } from "../../../types/game";
 
 interface DialogueProps {
 	lines: DialogueEntry[];
