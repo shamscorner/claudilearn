@@ -26,11 +26,9 @@ The app will be available at `http://localhost:3000`.
 | `bun --bun run dev` | Start development server |
 | `bun --bun run build` | Build for production |
 | `bun --bun run preview` | Preview production build |
-| `bun --bun run test` | Run tests with Vitest |
 | `bun --bun run format` | Format code with Biome |
 | `bun --bun run lint` | Lint code with Biome |
 | `bun --bun run check` | Run lint + format checks |
-| `bun --bun run deploy` | Build and deploy to Cloudflare |
 
 ## Tech Stack
 
@@ -38,7 +36,6 @@ The app will be available at `http://localhost:3000`.
 - **Styling:** Tailwind CSS v4
 - **Testing:** Vitest
 - **Linting/Formatting:** Biome
-- **Deployment:** Cloudflare Pages (via Wrangler)
 
 ## Project Structure
 
@@ -97,14 +94,6 @@ Run tests with:
 
 ```bash
 bun --bun run test
-```
-
-### Deployment
-
-The project deploys to Cloudflare Pages. To deploy:
-
-```bash
-bun --bun run deploy
 ```
 
 ## Learn More
