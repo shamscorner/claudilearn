@@ -52,6 +52,14 @@ export const Route = createRootRoute({
 				content:
 					"An interactive, story-driven terminal simulation for mastering Claude Code commands in a real-world SaaS startup scenario.",
 			},
+			{
+				property: "og:image",
+				content: "https://claudeilearn.shamscorner.com/opengraph.jpeg",
+			},
+			{
+				name: "twitter:image",
+				content: "https://claudeilearn.shamscorner.com/opengraph.jpeg",
+			},
 		],
 		links: [
 			{
@@ -61,6 +69,44 @@ export const Route = createRootRoute({
 			{
 				rel: "canonical",
 				href: "https://claudeilearn.shamscorner.com",
+			},
+			{
+				rel: "icon",
+				type: "image/x-icon",
+				href: "/favicon.ico",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "16x16",
+				href: "/favicon-16x16.png",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "32x32",
+				href: "/favicon-32x32.png",
+			},
+			{
+				rel: "apple-touch-icon",
+				sizes: "180x180",
+				href: "/apple-touch-icon.png",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "192x192",
+				href: "/android-chrome-192x192.png",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "512x512",
+				href: "/android-chrome-512x512.png",
+			},
+			{
+				rel: "manifest",
+				href: "/manifest.json",
 			},
 		],
 	}),
