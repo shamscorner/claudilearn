@@ -37,7 +37,7 @@ export function Input({
 
 	return (
 		<div className="flex items-center gap-2 mt-4">
-			<span className="text-[#00ff00] font-mono text-lg">&gt;</span>
+			<span className="text-[#DE7356] font-mono text-lg">&gt;</span>
 			<input
 				ref={inputRef}
 				type="text"
@@ -46,7 +46,7 @@ export function Input({
 				onKeyDown={handleKeyDown}
 				disabled={disabled}
 				placeholder={placeholder || "Type a command..."}
-				className="flex-1 bg-transparent border-none outline-none text-[#00ff00] font-mono text-lg placeholder:text-[#666] placeholder:font-bold placeholder:text-base caret-[#00ff00]"
+				className="flex-1 bg-transparent border-none outline-none text-[#DE7356] font-mono text-lg placeholder:text-[#666] placeholder:font-bold placeholder:text-base caret-[#DE7356]"
 				autoComplete="off"
 				spellCheck={false}
 			/>

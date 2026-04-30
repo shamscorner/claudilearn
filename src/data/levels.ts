@@ -21,7 +21,8 @@ export const levels: Level[] = [
 				type: "urgent",
 			},
 		],
-		output: "Claude Code Terminal v1.0. Welcome.",
+		output:
+			"[Claude Code Terminal v1.0.8]\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n> System initializing...\n> Loading core modules........ OK\n> Establishing secure channel... DONE\n> Neural interface active.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nType a prompt or type /help for commands.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
 		learningHook: "The entry point to the system.",
 		hint: "Type `claude` and press Enter to start",
 	},
@@ -42,7 +43,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "Analyzing system... Intrusion detected.",
+		output:
+			"[PROCESSING QUERY: \"analyze system\"]\n> Scanning directory structure...............\n> Analyzing 847 files................\n> Checking network connections........\n> Running vulnerability scan...........\n\n[!] INTRUSION DETECTED\n[!] Signature: 'shadow_proxy' - TCP port 4444\n[!] Origin: 192.168.42.7 (external)\n[!] Payload: buffer_overflow_attempt.log\n\n> Recommendation: Execute 'claude -p \"investigate incident\"' for forensic analysis",
 		learningHook: "Direct questions save time.",
 		hint: 'Try `claude "analyze system"`',
 	},
@@ -64,7 +66,8 @@ export const levels: Level[] = [
 				type: "slack",
 			},
 		],
-		output: "User: unknown_ghost detected.",
+		output:
+			"[HEADLESS MODE - STEALTH QUERY]\n> Executing: who is logged in\n> Connection duration: 847ms\n> Session footprint: NONE\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nUSER PROCESS TABLE:\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nPID    USER        TTY      LOGIN    IP_ADDR        COMMAND\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  42   root        pts/0    14:23    10.0.0.42     bash\n1847   unknown_ghost pts/1    14:31    -.--.-.-    /tmp/.shadow\n??     ??          ?        ??       192.168.1.99  [LISTENING]\n\n[!] WARNING: Unidentified process on port 31337\n> User 'unknown_ghost' detected - no valid session token",
 		learningHook: "Headless mode is for surgical strikes.",
 		hint: "Use `-p` flag for headless mode",
 	},
@@ -86,7 +89,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "Resuming previous context...",
+		output:
+			"[CONTEXT RECOVERY]\n> Connection interrupted at 14:32:07\n> Searching conversation history............... OK\n> Loading session state from: /tmp/claude/sessions/pending\n> Reconstructing memory chain...............\n\n[RECOVERED]\n> Last command: 'git log --oneline -20'\n> Pending action: Review incident-04 for suspicious commits\n> Context restored. 3 files in memory buffer.\n\n> Ready to continue.",
 		learningHook: "Persistence is key.",
 		hint: "Use `-c` to continue",
 	},
@@ -105,7 +109,8 @@ export const levels: Level[] = [
 				type: "narrative",
 			},
 		],
-		output: "Session 'incident-04' loaded.",
+		output:
+			"[SESSION RESTORE: incident-04]\n> Loading from: ~/.claude/sessions/incident-04.log\n> Session timestamp: 2025-04-29T03:42:11Z\n> Commands executed: 127\n> Files accessed: 34\n\n[LAST SESSION LOG]\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n[03:42:11] > Analyzed auth bypass vulnerability\n[03:43:28] > Found credentials in plaintext: /etc/shadow.bak\n[03:44:15] > Discovered malware: /tmp/rootkit.sh\n[03:45:02] > [!] Session terminated abruptly\n[03:45:02] > [!] Admin user 'sysop' went offline\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> Session loaded. Last action: Investigate /tmp/rootkit.sh",
 		learningHook: "History is full of clues.",
 		hint: "Use `-r` with session name",
 	},
@@ -120,7 +125,8 @@ export const levels: Level[] = [
 		dialogue: [
 			{ speaker: "System", text: "Warning: CLI outdated.", type: "urgent" },
 		],
-		output: "Updating to latest secure build...",
+		output:
+			"[CLI UPDATE - Security Patch v1.0.12]\n> Current version: v1.0.8 (BUILD: 2025-03-15)\n> Checking remote server: https://update.anthropic.com\n> Downloading patch package............ 12.4MB\n> Verifying signature................... VALID\n> Computing delta patches.............. OK\n\n[UPDATING]\n> Replacing binary: claude            [=====     ] 45%\n> Updating configs: claude.json       [=======   ] 65%\n> Rebuilding cache.................... [=========] 89%\n> Restarting services................. DONE\n\n> Claude Code v1.0.12 installed successfully\n> New features: headless streaming, extended MCP support",
 		learningHook: "Stay sharp, stay updated.",
 		hint: "Run `claude update`",
 	},
@@ -139,7 +145,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "Auth: Valid. Clearance: Level 3.",
+		output:
+			"[AUTH STATUS CHECK]\n> Querying IAM service.............. OK\n> Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\n> Token issued: 2025-04-30T08:15:00Z\n> Token expires: 2025-04-30T20:15:00Z\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nAUTHENTICATION STATUS: VALID\nCLEARANCE: LEVEL 3 (SECURE AREA)\nUSER: agent_operator_847\nRIGHTS: read, write, execute\nPOLICY: DEFAULT_SECURE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> Access granted to /core/system_files",
 		learningHook: "Know your privileges.",
 		hint: "Check auth with `claude auth status`",
 	},
@@ -154,7 +161,8 @@ export const levels: Level[] = [
 		dialogue: [
 			{ speaker: "Handler", text: "Check your manual.", type: "slack" },
 		],
-		output: "Listing all commands...",
+		output:
+			"[AVAILABLE COMMANDS]\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nCORE COMMANDS:\n  claude [<prompt>]      Start session with optional prompt\n  claude -p              Headless mode (one-shot query)\n  claude -c              Continue last conversation\n  claude -r <session>    Resume specific session\n\nADMIN COMMANDS:\n  claude update          Update CLI to latest version\n  claude auth status     Check authentication state\n  /doctor                Diagnose installation issues\n  /login                 Authenticate with Anthropic\n\nPROJECT COMMANDS:\n  /init                  Initialize CLAUDE.md in project\n  /add-dir               Add accessible directory\n  /agents                Configure agent behaviors\n\nAUTOMATION COMMANDS:\n  /autofix-pr            Auto-fix current PR issues\n  /batch                 Batch process across files\n  /branch                Create/switch branches\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nType 'claude --help' for advanced flags.",
 		learningHook: "The manual is your best friend.",
 		hint: "Type /help",
 	},
@@ -173,7 +181,8 @@ export const levels: Level[] = [
 				type: "narrative",
 			},
 		],
-		output: "Login successful.",
+		output:
+			"[BIOMETRIC AUTHENTICATION]\n> Initiating OAuth2 flow................. OK\n> Waiting for biometric verification..... OK\n> Scanning retina signature.............. MATCH\n> Voice print confirmation............... VERIFIED\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n[✓] IDENTITY CONFIRMED\n[✓] Account: operator_847@anthropic.ai\n[✓] Session token generated\n[✓] MFA: ENABLED (hardware key)\n\nSESSION ESTABLISHED\nValid for: 8 hours\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> You now have full API access",
 		learningHook: "Identity confirmed.",
 		hint: "Use /login",
 	},
@@ -192,7 +201,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "All systems green. Dependencies ok.",
+		output:
+			"[CLAUDE DIAGNOSTIC REPORT]\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nChecking installation health...\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n[✓] CLI Binary:       v1.0.12 (latest)\n[✓] Config File:      /Users/operator/.claude.json\n[✓] Cache Dir:        847MB used (1.2GB limit)\n[✓] API Connection:   Reachable (latency: 42ms)\n[✓] Auth Token:       Valid (expires in 7.2h)\n\n[CHECKING DEPENDENCIES]\n[✓] Node.js: v20.11.0\n[✓] npm: v10.2.4\n[✓] Git: v2.43.0\n[✓] MCP Servers: 4 running\n\n[ENVIRONMENT]\n[✓] PATH configured correctly\n[✓] Shell integration: zsh\n[✓] Editor: VSCode\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSTATUS: ALL SYSTEMS GREEN\nNo issues detected. Ready for operation.",
 		learningHook: "Diagnose before you act.",
 		hint: "Use /doctor",
 	},
@@ -211,7 +221,8 @@ export const levels: Level[] = [
 				type: "urgent",
 			},
 		],
-		output: "CLAUDE.md created.",
+		output:
+			"[PROJECT INITIALIZATION]\n> Scanning project structure.............. OK\n> Detected framework: TanStack Start\n> Found package.json, tsconfig.json\n> Analyzing codebase..................... 234 files\n\n[CREATING CLAUDE.MD]\n> Writing project overview............... OK\n> Documenting structure................... OK\n> Adding guidelines....................... OK\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n✓ CLAUDE.md created in project root\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nCONTENTS:\n- Project overview and purpose\n- Directory structure\n- Coding conventions\n- Available commands\n- Build/run instructions\n\n> Claude now has context. Use /init to refresh.",
 		learningHook: "Context grounds the AI.",
 		hint: "Run /init",
 	},
@@ -230,7 +241,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "Directory added.",
+		output:
+			"[ADDING WORKING DIRECTORY]\n> Target path: ../secrets\n> Resolving relative path................. OK\n> Checking permissions.................... OK\n> Verifying path exists.................\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n[+] Directory added to allowed paths:\n    > /Users/operator/projects/claudify-learn/../secrets\n\n[ALLOWED DIRECTORIES]\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  1. /Users/operator/projects/claudify-learn (default)\n  2. /Users/operator/secrets (NEW)\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> You can now access files in /Users/operator/secrets",
 		learningHook: "Expand your horizons.",
 		hint: "Use /add-dir to add directories",
 	},
@@ -249,7 +261,8 @@ export const levels: Level[] = [
 				type: "narrative",
 			},
 		],
-		output: "Agents loaded.",
+		output:
+			"[AGENT CONFIGURATION]\n> Loading agent definitions from .claude/agents.json\n> Found 3 agent definitions\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nCONFIGURED AGENTS:\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n[1] EXPLORER\n    Role: Investigate and map unknown codebases\n    Capabilities: glob, grep, read, analyze\n    Status: ACTIVE\n\n[2] CODE-REVIEWER  \n    Role: Review PRs and suggest improvements\n    Capabilities: diff, suggest, validate\n    Status: ACTIVE\n\n[3] BUILDER\n    Role: Execute multi-step implementation tasks\n    Capabilities: write, edit, run, test\n    Status: ACTIVE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> Agent system ready. Use /agents <name> to invoke.",
 		learningHook: "You do not have to work alone.",
 		hint: "Use /agents",
 	},
@@ -270,7 +283,8 @@ export const levels: Level[] = [
 				type: "urgent",
 			},
 		],
-		output: "Watching PR. Fixes deploying.",
+		output:
+			"[PR AUTO-FIX MODE ACTIVATED]\n> Target: PR #247 (feature/auth-refactor)\n> Checking CI status................... FAILED (3/8 tests)\n\n[ANALYZING FAILURES]\n> test_auth_flow.ts: 2 failures\n> test_token_refresh.ts: 1 failure\n> Analyzing error patterns.............\n\n[FIXING]\n> Applying fix: auth_token_expiry_edge_case\n> Refactoring: token refresh logic\n> Running tests again.................\n\n[DEPLOYING FIXES]\n> ✓ test_auth_flow.ts fixed (1 commit)\n> ✓ test_token_refresh.ts fixed (1 commit)\n> ✓ TypeScript errors resolved\n\n[CI STATUS]\n> Tests: 8/8 PASSING\n> ✓ Build successful\n> Pushing fixes to remote.............. DONE\n\n> PR #247 is now green. Auto-fix complete.",
 		learningHook: "Automation beats manual patching.",
 		hint: "Use /autofix-pr",
 	},
@@ -289,7 +303,8 @@ export const levels: Level[] = [
 				type: "urgent",
 			},
 		],
-		output: "Batch process started across 400 files.",
+		output:
+			'[BATCH OPERATION: "update encryption"]\n> Scanning repository for affected files\n> Found 400 files matching pattern\n> Creating worker pool (8 workers)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nPROGRESS:\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n[  10%] Encrypting utils/crypto.ts\n[  25%] Encrypting services/auth.ts\n[  38%] Encrypting middleware/secure.ts\n[  52%] Encrypting lib/cipher.js\n[  67%] Encrypting config/keys.json\n[  81%] Encrypting handlers/api.ts\n[  95%] Encrypting tests/encrypt.test.ts\n[100%] Encrypting final files\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n> Completed: 400/400 files\n> Commits: 12\n> Time: 4m 23s\n\n✓ Batch encryption update complete',
 		learningHook: "Scale your impact.",
 		hint: "Use /batch",
 	},
@@ -308,7 +323,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "Branched to plan-b.",
+		output:
+			"[BRANCHING CONVERSATION]\n> Current branch: main (active)\n> Creating branch: plan-b\n> Snapshotting context state............ OK\n> Branched conversation tree:\n\nMAIN (active)\n └─ plan-b (new branch)\n\n> Switched to branch: plan-b\n> Use '/branch main' to return to original\n\n> Branch created. Safe to experiment.",
 		learningHook: "Always have a fallback.",
 		hint: "Use /branch",
 	},
@@ -327,7 +343,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "AES stands for Advanced Encryption Standard.",
+		output:
+			'[SIDE QUESTION: "what does AES mean"]\n> Query: what does AES mean\n> Context preservation: ACTIVE\n> Previous conversation state: PRESERVED\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nANSWER: AES stands for Advanced Encryption Standard\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nDETAILS:\n- Symmetric block cipher (128, 192, or 256-bit)\n- Adopted by U.S. government in 2001\n- Replaced DES as federal standard\n- Used in: WiFi (WPA2), SSL/TLS, file encryption\n\n> Context intact. Continue your main task.',
 		learningHook: "Knowledge on demand.",
 		hint: "Use /btw for quick questions",
 	},
@@ -346,7 +363,8 @@ export const levels: Level[] = [
 				type: "slack",
 			},
 		],
-		output: "Chrome settings synced.",
+		output:
+			"[CHROME EXTENSION SETTINGS]\n> Connecting to Chrome extension API...\n> Checking extension status: CONNECTED\n> Syncing preferences.................\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nCHROME EXTENSION CONFIG:\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  Status:         Enabled\n  Version:        v1.0.12\n  API Endpoint:   https://claude.ai/chrome\n  Auth Token:     ●●●●●●●● (valid)\n  \n  Features:\n  - Page context capture: ENABLED\n  - Auto-summarize:       ENABLED\n  - Quick actions:        ENABLED\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> Chrome settings synchronized.",
 		learningHook: "Secure all endpoints.",
 		hint: "Use /chrome",
 	},
@@ -365,7 +383,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "API Docs loaded.",
+		output:
+			"[LOADING API REFERENCE]\n> Fetching from: https://docs.anthropic.com/en/api/claude-code\n> Downloading documentation............... 2.4MB\n> Parsing JSON schemas.................. OK\n> Indexing methods and endpoints........\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nCLAUDE SDK API REFERENCE LOADED\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nENDPOINTS:\n  claude.messages.create()  - Send a message\n  claude.messages.stream() - Stream responses\n  claude.beta.features()   - Access beta features\n\nMETHODS:\n  .complete()  .embed()  .beta()  .auth\n\nDOCS: Type 'claude --help-api' for examples",
 		learningHook: "Docs at your fingertips.",
 		hint: "Use /claude-api",
 	},
@@ -380,7 +399,8 @@ export const levels: Level[] = [
 		dialogue: [
 			{ speaker: "You", text: "Wipe it. Start fresh.", type: "internal" },
 		],
-		output: "Context cleared.",
+		output:
+			"[CLEARING CONTEXT]\n> Preserving current command: /clear\n> Calculating conversation size: 42 messages (8,247 tokens)\n> Generating summary for history log...\n\n[TOKENS SAVED: 8,247]\n> Dumping memory buffers..............\n> Clearing conversation history......\n> Resetting variable state...........\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n✓ Context cleared successfully\n\nReady for a fresh conversation.\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> Type your next prompt",
 		learningHook: "Clarity requires a clean slate.",
 		hint: "Use /clear",
 	},
@@ -399,7 +419,8 @@ export const levels: Level[] = [
 				type: "narrative",
 			},
 		],
-		output: "Keybindings file opened.",
+		output:
+			"[KEYBINDINGS CONFIG]\n> Checking for existing config: ~/.claude/keybindings.json\n> Creating new bindings file.............\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nKEYBINDINGS EDITOR OPENED\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nCurrent bindings:\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  Ctrl+P    - Quick prompt\n  Ctrl+L    - Clear terminal\n  Ctrl+S    - Save session\n  Ctrl+R    - Resume session\n  Ctrl+?    - Show help\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> Edit your keybindings in the editor\n> Press Enter when done to save",
 		learningHook: "Speed is survival.",
 		hint: "Use /keybindings",
 	},
@@ -418,7 +439,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "Prompt color set to red.",
+		output:
+			"[SETTING PROMPT COLOR]\n> Target color: red\n> Updating terminal prompt template........\n> Applying ANSI escape codes............\n> Persisting to config..................\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n✓ Prompt color set to: RED (danger zone)\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nYour terminal will now display:\n[RED] user@host:~/project $\n\n> This visual indicator signals: PRODUCTION SYSTEM\n> Use '/color default' to reset",
 		learningHook: "Visual cues prevent mistakes.",
 		hint: "Use /color",
 	},
@@ -440,7 +462,8 @@ export const levels: Level[] = [
 				type: "urgent",
 			},
 		],
-		output: "Compacted history. 40k tokens saved.",
+		output:
+			"[CONTEXT COMPACTION]\n> Analyzing conversation history: 47 messages\n> Current token usage: 198,234 / 200,000 (99%)\n> Identifying redundant patterns...........\n\n[COMPACTING]\n> Summarizing early context............ [OK]\n> Merging similar file reads........... [OK]\n> Compressing repeated outputs.......... [OK]\n> Deduplicating system prompts......... [OK]\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n✓ History compacted successfully\n\nTOKENS SAVED: 40,247 (20%)\nCurrent usage: 157,987 / 200,000 (79%)\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> Context window freed. Ready for more work.",
 		learningHook: "Distill the noise.",
 		hint: "Use /compact",
 	},
@@ -459,7 +482,8 @@ export const levels: Level[] = [
 				type: "slack",
 			},
 		],
-		output: "Settings opened.",
+		output:
+			"[CLAUDE SETTINGS INTERFACE]\n> Loading configuration from ~/.claude.json\n> Parsing user preferences...............\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nCONFIGURATION MENU:\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n[1] Model          : claude-sonnet-4-20250514\n[2] Temperature   : 0.7 (balanced)\n[3] Max Tokens    : 4096\n[4] Output Format : text\n[5] Auto-save     : enabled\n\n[6] Theme         : terminal-dark\n[7] Verbosity     : standard\n[8] Streaming     : true\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n> Select option to modify (or press Enter to close)",
 		learningHook: "Tune your instrument.",
 		hint: "Use /config",
 	},
@@ -478,7 +502,8 @@ export const levels: Level[] = [
 				type: "urgent",
 			},
 		],
-		output: "Logged out successfully.",
+		output:
+			"[TERMINATING SESSION]\n> Flush pending writes to disk........... OK\n> Clearing session tokens from memory....\n> Revoking API access keys...............\n\n[TRACE REMOVAL]\n> Deleting session logs from: /tmp/claude/sessions\n> Purging auth credentials from cache.....\n> Killing connection threads..............\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n✓ Logged out successfully\n\nSession terminated at: 2025-04-30T14:32:07Z\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n> All traces removed. You are now invisible.",
 		learningHook: "Know when to run.",
 		hint: "Use /logout",
 	},
@@ -500,7 +525,8 @@ export const levels: Level[] = [
 				type: "internal",
 			},
 		],
-		output: "Looping every 1m.",
+		output:
+			'[LOOP MODE ACTIVATED]\n> Command: "check server status"\n> Interval: 1 minute (60 seconds)\n> Starting background task.................\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nLOOP STATUS: ACTIVE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nEXECUTION 1: 14:32:00 - ✓ Server UP (latency: 12ms)\nEXECUTION 2: 14:33:00 - ✓ Server UP (latency: 14ms)\nEXECUTION 3: 14:34:00 - ✓ Server UP (latency: 11ms)\nEXECUTION 4: 14:35:00 - ✓ Server UP (latency: 13ms)\n\n[Last 4 checks: OK]\n> Use /loop stop to halt this process\n\n> Monitoring in background. Continue your work.',
 		learningHook: "Automate vigilance.",
 		hint: "Use /loop",
 	},

@@ -1,7 +1,28 @@
-import { useCallback, useReducer, useRef, useState } from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { levels } from "../data/levels";
 import type { GameAction, GameState, Level } from "../types/game";
 import { initialGameState } from "../types/game";
+
+const STORAGE_KEY = "claudify-learn-game-state";
+
+function loadInitialState(): GameState {
+	if (typeof window === "undefined") return initialGameState;
+	const saved = localStorage.getItem(STORAGE_KEY);
+	if (saved) {
+		try {
+			const parsed = JSON.parse(saved);
+			return { ...initialGameState, ...parsed };
+		} catch {
+			return initialGameState;
+		}
+	}
+	return initialGameState;
+}
+
+function saveState(state: GameState) {
+	if (typeof window === "undefined") return;
+	localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
 
 function gameReducer(state: GameState, action: GameAction): GameState {
 	switch (action.type) {
@@ -36,11 +57,25 @@ function validateCommand(input: string, expected: string | undefined): boolean {
 		if (input.startsWith(`${baseCmd} `)) return true;
 	}
 
+	if (
+		expected.includes("-p") ||
+		expected.includes("-c") ||
+		expected.includes("-r")
+	) {
+		const baseCmd = expected.split(" ")[0];
+		if (input.startsWith(`${baseCmd} `)) return true;
+	}
+
 	return false;
 }
 
 export function useGame() {
-	const [state, dispatch] = useReducer(gameReducer, initialGameState);
+	const [state, dispatch] = useReducer(gameReducer, null, loadInitialState);
+
+	useEffect(() => {
+		saveState(state);
+	}, [state]);
+
 	const [command, setCommand] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 	const [isOutputVisible, setIsOutputVisible] = useState(false);

@@ -11,13 +11,13 @@ export function Output({ output }: OutputProps) {
 				output.map((line, idx) => (
 					<div
 						key={idx}
-						className="text-[#00ff00] font-mono text-sm my-1 whitespace-pre-wrap"
+						className="text-[#DE7356] font-mono text-sm my-1 whitespace-pre-wrap"
 					>
 						{line}
 					</div>
 				))
 			) : (
-				<div className="text-[#00ff00] font-mono text-sm my-1 whitespace-pre-wrap">
+				<div className="text-[#DE7356] font-mono text-sm my-1 whitespace-pre-wrap">
 					{output}
 				</div>
 			)}
