@@ -31,10 +31,12 @@ export function Terminal() {
 
 	useEffect(() => {
 		if (terminalContentRef.current) {
-			terminalContentRef.current.scrollTop =
-				terminalContentRef.current.scrollHeight;
+			terminalContentRef.current.scrollTo({
+				top: terminalContentRef.current.scrollHeight,
+				behavior: "smooth",
+			});
 		}
-	}, []);
+	}, [outputHistory]);
 
 	const [sidebarFiles] = useState([
 		"/src",
