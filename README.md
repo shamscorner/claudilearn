@@ -113,3 +113,7 @@ bun --bun run deploy
 - [TanStack Router](https://tanstack.com/router)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Biome](https://biomejs.dev/)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
