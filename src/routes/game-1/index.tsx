@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sidebar } from "./-components/sidebar";
 import { Terminal } from "./-components/terminal";
 import { useGameState } from "./-hooks/use-game-state";
@@ -16,6 +16,7 @@ export const Route = createFileRoute("/game-1/")({
 
 function RouteComponent() {
 	const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+	const closeButtonRef = useRef<HTMLButtonElement>(null);
 	const {
 		currentLevel,
 		history,
@@ -29,6 +30,14 @@ function RouteComponent() {
 	} = useGameState();
 
 	const progress = (currentLevelIndex / totalLevels) * 100;
+
+	useEffect(() => {
+		if (isMobileSidebarOpen) {
+			setTimeout(() => {
+				closeButtonRef.current?.focus();
+			}, 100);
+		}
+	}, [isMobileSidebarOpen]);
 
 	return (
 		<div className="flex h-dvh w-full bg-[#0d0d0d] overflow-hidden text-terminal-text selection:bg-terminal-accent/30 selection:text-white">
@@ -105,6 +114,7 @@ function RouteComponent() {
 								Menu
 							</span>
 							<button
+								ref={closeButtonRef}
 								onClick={() => setIsMobileSidebarOpen(false)}
 								className="p-1 text-terminal-text hover:text-terminal-accent transition-colors"
 							>

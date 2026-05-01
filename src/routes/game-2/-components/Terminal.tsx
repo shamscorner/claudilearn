@@ -149,18 +149,18 @@ export function Terminal() {
 					)}
 				</div>
 
-				<div className="border-t border-[#333] bg-[#0d0d0d] p-4">
+				<div className="border-t border-[#333] bg-[#0d0d0d] p-1 sm:p-4">
 					{!isOutputVisible && (
-						<div className="mb-4 p-4 bg-[#1a1a1a] border-2 border-[#DE7356] rounded-lg shadow-lg shadow-[#DE7356]/10">
-							<div className="text-xs uppercase tracking-wider text-[#DE7356] font-bold mb-2">
+						<div className="p-2 sm:p-4 bg-[#1a1a1a] border-2 border-[#DE7356] rounded-lg shadow-lg shadow-[#DE7356]/10">
+							<div className="text-xs uppercase tracking-wider text-[#DE7356] font-bold mb-1">
 								Command Instruction
 							</div>
-							<div className="text-lg font-bold text-white mb-2">
+							<div className="text-base sm:text-lg font-bold text-white mb-1">
 								Type:{" "}
 								<span className="text-[#DE7356]">{currentLevel?.command}</span>
 							</div>
 							{currentLevel?.commandDescription && (
-								<div className="text-sm text-gray-400 border-t border-[#333] pt-2 mt-2">
+								<div className="text-xs md:text-sm text-gray-400 border-t border-[#333] pt-2 mt-2">
 									{currentLevel.commandDescription}
 								</div>
 							)}
